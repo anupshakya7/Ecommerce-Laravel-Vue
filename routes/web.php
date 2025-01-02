@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,3 +20,8 @@ Route::get('/', function () {
     return view('admin.index');
 });
 
+Route::get('/login',function(){
+    return view('auth.signin');
+});
+
+Route::post('/login_user',[AuthController::class,'loginUser']);

@@ -12,3 +12,4 @@
 <script src="{{asset('assets/js/index.js')}}"></script>
 <!--app JS-->
 <script src="{{asset('assets/js/app.js')}}"></script>
+<script src="https://developercodez.com/developerCorner/parsley/parsley.min.js"></script>
