@@ -33,7 +33,8 @@ class AuthController extends Controller
             if(Auth::user()->hasRole('admin')){
                 return response()->json([
                     'status'=>200,
-                    'message'=>'Login Successfully!!!'
+                    'message'=>'Login Successfully!!!',
+                    'url'=>'admin/dashboard'
                 ]);
             }else{
                 return response()->json([

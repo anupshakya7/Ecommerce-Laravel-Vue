@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Models\Role;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,11 +18,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('admin.index');
+    return redirect('admin/dashboard');
 });
 
 Route::get('/login',function(){
     return view('auth.signin');
+});
+
+Route::get('/logout',function(){
+    Auth::logout();
+    return redirect('/login');
 });
 
 Route::post('/login_user',[AuthController::class,'loginUser']);
